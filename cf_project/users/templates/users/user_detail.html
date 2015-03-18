@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.firstname }} {{ object.lastname }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ object.firstname }} {{ object.lastname }}</h1>
+
+<p>User ID: {{ object.id }}</p>
+
+<p>Email: {{object.email }}</p>
+
+<p><a href="{% url 'user-list' %}">Back to list of users</a></p>
+
+{% endblock %}
