@@ -4,9 +4,16 @@
         <title>{% block title %}Generic title{% endblock %}</title>
         <!-- Bootstrap -->
         <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            #cf_head { font-style: italic; font-weight: bold; }
+            #cf_text { font-style: italic; }
+        </style>
     </head>
     <body>
         <div class="container">
+
+            <p id="cf_head">Generate a Django app that allows a user to create, edit, update, and destroy (delete) users.</p> 
+            <p id="cf_text">Users should have first name, last name, and email address fields. First name is required. Email should be a valid email. If you breezed through this challenge, add extra features to this app (be creative) and tell us what you did so we don’t miss it.</p>
 
             {% block content %}
 

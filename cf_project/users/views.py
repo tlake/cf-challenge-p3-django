@@ -41,5 +41,5 @@ class UserDeleteView(DeleteView):
     model = User
 
     def get_success_url(self):
-        return reverse('user-detail', [self.id])
+        return reverse('user-list')
 
