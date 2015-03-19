@@ -4,12 +4,17 @@
 
 {% block content %}
 
-<h1>{{ object.firstname }} {{ object.lastname }}</h1>
+    <h1>{{ object.firstname }} {{ object.lastname }}</h1>
 
-<p>User ID: {{ object.id }}</p>
+    <p>User ID: {{ object.id }}</p>
 
-<p>Email: {{object.email }}</p>
+    <p>Email: {{object.email }}</p>
 
-<p><a href="{% url 'user-list' %}">Back to list of users</a></p>
+    <p><a class='btn btn-default' href="{% url 'user-list' %}">Back to list of users</a></p>
+
+    <div class='btn-group btn-group-justified' role='group'>
+        <p><a class='btn btn-default' href="{% url 'user-edit' object.id %}">Edit User</a></p>
+        <p><a class='btn btn-default' href="{% url 'user-delete' object.id %}">Delete User</a></p>
+    </div>
 
 {% endblock %}

@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'cf_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^$', include('users.urls')),
     url(r'^users/', include('users.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

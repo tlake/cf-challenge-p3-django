@@ -17,11 +17,12 @@ def user_list(request):
 # This is a newer 'class-based generic view' setup; less typing, but this syntax
 # isn't as flexible.
 #
-# I guess the lesson is to prefer this method, but be bale to fall back on the
+# I guess the lesson is to prefer this method, but be able to fall back on the
 # older syntax if necessary?
 
 from users.models import User
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse 
 
 class UserListView(ListView):
     model = User
@@ -31,3 +32,14 @@ class UserDetailView(DetailView):
 
 class UserCreateView(CreateView):
     model = User
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'users/user_edit_form.html'
+
+class UserDeleteView(DeleteView):
+    model = User
+
+    def get_success_url(self):
+        return reverse('user-detail', [self.id])
+

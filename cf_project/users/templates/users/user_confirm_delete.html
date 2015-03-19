@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Delete User{% endblock %}
+
+{% block content %}
+<h1>Delete User</h1>
+
+<h2>Really delete {{ object }}?<h2>
+
+<p>It will be permanently lost</p>
+
+<form method="post">{% csrf_token %}
+    <button class='btn btn-default' type="submit">Delete</button>
+</form>
+<a class='btn btn-default' href="{% url 'user-detail' object.id %}">Cancel</a>
+
+    {% endblock %}
