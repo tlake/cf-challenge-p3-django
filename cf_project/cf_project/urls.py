@@ -13,5 +13,3 @@ urlpatterns = patterns('',
     url(r'^users/', include('users.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
