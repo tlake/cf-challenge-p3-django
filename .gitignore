@@ -1,0 +1,11 @@
+# ignore all virtualenv stuff
+env/
+
+# ignore swap
+*.swp
+
+# ignore .pyc files
+*.pyc
+
+# ignore staticfiles folder
+cf_project/staticfiles/
