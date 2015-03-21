@@ -3,23 +3,27 @@
 
 {% block title %}Edit User{% endblock %}
 
-{% block content %}
+{% block pagehead %}Edit User{% endblock %}
 
-    <h1>Edit User</h1>
+{% block content %}
 
     <form method="POST">{% csrf_token %}
         {{ form|crispy }}
+
+        <p></p>
 
         <button class='btn btn-primary' type="submit">
             <span class='glyphicon glyphicon-save'>
             </span>
             Save
         </button>
+
         <a class='btn btn-default' href="{% url 'user-detail' object.id %}">
             <span class='glyphicon glyphicon-remove'>
             </span>
             Cancel
         </a>
+
     </form>
 
 {% endblock %}

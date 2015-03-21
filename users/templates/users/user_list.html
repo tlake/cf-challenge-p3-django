@@ -2,19 +2,19 @@
 
 {% block title %}User list{% endblock %}
 
+{% block pagehead %}User List{% endblock %}
+
 {% block content %}
 
-    <h1>User list</h1>
-
-    <ul>
-        {% for object in object_list %}
-            <li>
-                <a href="{% url 'user-detail' object.id %}">
-                    {{ object }}
+    <div class='container'>
+        <div class='list-group col-sm-4'>
+            {% for object in object_list %}
+                <a class='list-group-item' href="{% url 'user-detail' object.id %}">
+                    {{ object.firstname }} {{ object.lastname }}
                 </a>
-            </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </div>
+    </div>
 
     <a class='btn btn-primary' href="{% url 'user-create' %}">
         <span class='glyphicon glyphicon-plus'>
