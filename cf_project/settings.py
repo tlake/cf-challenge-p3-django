@@ -66,6 +66,7 @@ DATABASES = {
 }
 '''
 
+'''
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -77,6 +78,11 @@ DATABASES = {
             'PORT': '',                      # Set to empty string for default.
         }
     }
+    '''
+
+DATABASES = {
+        'default': dj_database_url.config()
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
