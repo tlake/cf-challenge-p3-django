@@ -4,24 +4,39 @@
         <title>{% block title %}Generic title{% endblock %}</title>
         <!-- Bootstrap -->
         <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            #cf_head { font-style: italic; font-weight: bold; }
-            #cf_text { font-style: italic; }
-        </style>
     </head>
     <body>
         <div class="container">
 
-            <p id="cf_head">Generate a Django app that allows a user to create, edit, update, and destroy (delete) users.</p> 
-            <p id="cf_text">Users should have first name, last name, and email address fields. First name is required. Email should be a valid email. If you breezed through this challenge, add extra features to this app (be creative) and tell us what you did so we don’t miss it.</p>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Generate a Django app that allows a 
+                        user to create, edit, update, and destroy (delete) users.
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+                    <p>Users should have first name, last name, and email address 
+                        fields. First name is required. Email should be a valid email. 
+                        If you breezed through this challenge, add extra features to 
+                        this app (be creative) and tell us what you did so we don’t 
+                        miss it
+                    </p>
+                </div>
+            </div>
+
 
             {% block content %}
 
-            <h1>Generic title</h1>
+                <h1>Generic title</h1>
 
-            Nothing interesting yet
+                Nothing interesting yet
 
             {% endblock %}
+
+            <div class='btn-group' role='group'>
+
+            </div>
 
         </div>
         <script src="http://code.jquery.com/jquery-latest.js"></script>

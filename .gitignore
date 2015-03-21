@@ -9,3 +9,9 @@ env/
 
 # ignore staticfiles folder
 staticfiles/
+
+# ignore local files
+*.sqlite3
+.foreman
+local-procfile
+local-settings

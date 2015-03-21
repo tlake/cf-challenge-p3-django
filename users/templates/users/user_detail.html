@@ -10,11 +10,22 @@
 
     <p>Email: {{object.email }}</p>
 
-    <p><a class='btn btn-default' href="{% url 'user-list' %}">Back to list of users</a></p>
-
-    <div class='btn-group btn-group-justified' role='group'>
-        <p><a class='btn btn-default' href="{% url 'user-edit' object.id %}">Edit User</a></p>
-        <p><a class='btn btn-default' href="{% url 'user-delete' object.id %}">Delete User</a></p>
-    </div>
+    <p>
+        <a class='btn btn-info' role="button" href="{% url 'user-edit' object.id %}">
+            <span class='glyphicon glyphicon-pencil'>
+            </span>
+            Edit User
+        </a>
+        <a class='btn btn-warning' role="button" href="{% url 'user-delete' object.id %}">
+            <span class='glyphicon glyphicon-trash'>
+            </span>
+            Delete User
+        </a>
+    </p>
+    <a class='btn btn-primary' href="{% url 'user-list' %}">
+        <span class='glyphicon glyphicon-menu-left'>
+        </span>
+        Back to list of users
+    </a>
 
 {% endblock %}

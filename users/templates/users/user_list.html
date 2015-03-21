@@ -8,10 +8,18 @@
 
     <ul>
         {% for object in object_list %}
-            <li><a href="{% url 'user-detail' object.id %}">{{ object }}</a></li>
+            <li>
+                <a href="{% url 'user-detail' object.id %}">
+                    {{ object }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 
-    <a class='btn btn-default' href="{% url 'user-create' %}">Add user</a>
+    <a class='btn btn-primary' href="{% url 'user-create' %}">
+        <span class='glyphicon glyphicon-plus'>
+        </span>
+        Add user
+    </a>
 
 {% endblock %}

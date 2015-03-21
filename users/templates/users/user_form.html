@@ -8,10 +8,19 @@
     <h1>Create User</h1>
 
     <form method="POST">{% csrf_token %}
-        {{ form|crispy }}
+            {{ form|crispy }}
 
-        <button class='btn btn-default' type="submit">Create</button>
-        <a class='btn btn-default' href="{% url 'user-list' %}">Cancel</a></p>
+            <button class='btn btn-primary' type="submit">
+                <span class='glyphicon glyphicon-ok'>
+                </span>
+                Create
+            </button>
+            <a class='btn btn-default' href="{% url 'user-list' %}">
+                <span class='glyphicon glyphicon-remove'>
+                </span>
+                Cancel
+            </a>
+        </p>
     </form>
 
 {% endblock %}
