@@ -8,4 +8,4 @@ env/
 *.pyc
 
 # ignore staticfiles folder
-/staticfiles/*
+staticfiles/
