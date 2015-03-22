@@ -7,7 +7,7 @@
 {% block content %}
 
     <div class='container'>
-        <div class='list-group col-sm-4'>
+        <div class='list-group col-sm-5'>
             {% for object in object_list %}
                 <a class='list-group-item' href="{% url 'user-detail' object.id %}">
                     {{ object.firstname }} {{ object.lastname }}
