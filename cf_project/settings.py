@@ -105,7 +105,7 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-
+# Use local settings if they exist (i.e. when developing)
 try:
     from local_settings import *
 except ImportError:

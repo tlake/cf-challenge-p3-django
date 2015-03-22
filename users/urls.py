@@ -4,7 +4,8 @@ from django.conf.urls import patterns, include, url
 #from users.views import user_list
 
 # Next line replaces the above line, but for the newer class-based syntax:
-from users.views import UserListView, UserDetailView, UserCreateView, UserUpdateView, UserDeleteView
+from users.views import (UserListView, UserDetailView, UserCreateView,
+        UserUpdateView, UserDeleteView, AboutListView, )
 
 
 urlpatterns = patterns('',
@@ -17,4 +18,5 @@ urlpatterns = patterns('',
     url(r'^create/', UserCreateView.as_view(), name='user-create'),
     url(r'^(?P<pk>[\d]+)/edit/', UserUpdateView.as_view(), name='user-edit'),
     url(r'^(?P<pk>[\d]+)/delete/', UserDeleteView.as_view(), name='user-delete'),
+    url(r'^about/', AboutListView.as_view(), name='abouttext-list'),
     )

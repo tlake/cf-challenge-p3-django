@@ -11,3 +11,13 @@ class User(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('user-detail', [self.id])
+
+
+class AboutText(models.Model):
+    display_order = models.IntegerField()
+    title = models.CharField(max_length=80)
+    content = models.TextField()
+
+    def __unicode__(self):
+        return str(self.display_order) + ": " + self.title
+

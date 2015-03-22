@@ -1,7 +1,7 @@
 '''
 
 This commented block is a view function done in an older style which is quite
-flexible, but requires a lot more typing - this interferes with the DNRY principle.
+flexible, but requires a lot more typing - this interferes with the DRY principle.
 
 from django.shortcuts import render
 
@@ -20,7 +20,7 @@ def user_list(request):
 # I guess the lesson is to prefer this method, but be able to fall back on the
 # older syntax if necessary?
 
-from users.models import User
+from users.models import User, AboutText
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse 
 
@@ -43,3 +43,5 @@ class UserDeleteView(DeleteView):
     def get_success_url(self):
         return reverse('user-list')
 
+class AboutListView(ListView):
+    queryset = AboutText.objects.all().order_by('display_order')
