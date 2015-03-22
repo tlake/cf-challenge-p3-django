@@ -6,8 +6,12 @@
 
 {% block content %}
 
-    {% for object in object_list %}
-        <p class='text-justify'>{{ object.content }}</p>
-    {% endfor %}
+    <div class='panel panel-info panel-body'>
+
+        {% for object in object_list %}
+            <p class='text-justify'>{{ object.content }}</p>
+        {% endfor %}
+
+    </div>
 
 {% endblock %}
