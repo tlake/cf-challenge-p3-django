@@ -6,30 +6,42 @@
 
 {% block content %}
 
-    <ul class='list-group'>
+    <div class='row'>
+        <div class='col-md-5'>
+            {% if object.avatar_url != '' %}
+                <img class='user-avatar img-thumbnail' src='{{ object.avatar_url }}' alt='avatar' />
+            {% else %}
+                <img class='user-avatar img-thumbnail' src='http://tinyurl.com/ltjeokn' alt='avatar' />
+            {% endif %}
 
-        <li class='list-group-item active'>{{ object.firstname }} {{ object.lastname }}</li>
-        <li class='list-group-item'>Email: {{object.email }}</li>
-        <li class='list-group-item disabled'>User ID: {{ object.id }}</li>
+        </div>
+        <div class='col-md-7'>
 
-    </ul>
+            <ul class='list-group'>
 
-    <p>
-        <a class='btn btn-info' role="button" href="{% url 'user-edit' object.id %}">
-            <span class='glyphicon glyphicon-pencil'>
-            </span>
-            Edit User
-        </a>
-        <a class='btn btn-warning' role="button" href="{% url 'user-delete' object.id %}">
-            <span class='glyphicon glyphicon-trash'>
-            </span>
-            Delete User
-        </a>
-    </p>
-    <a class='btn btn-primary' href="{% url 'user-list' %}">
-        <span class='glyphicon glyphicon-menu-left'>
-        </span>
-        Back to list of users
-    </a>
+                <li class='list-group-item active'>{{ object.firstname }} {{ object.lastname }}</li>
+                <li class='list-group-item'>Email: {{ object.email }}</li>
+                <li class='list-group-item disabled'>User ID: {{ object.id }}</li>
+
+            </ul>
+            <p>
+                <a class='btn btn-info' role="button" href="{% url 'user-edit' object.id %}">
+                    <span class='glyphicon glyphicon-pencil'>
+                    </span>
+                    Edit User
+                </a>
+                <a class='btn btn-warning' role="button" href="{% url 'user-delete' object.id %}">
+                    <span class='glyphicon glyphicon-trash'>
+                    </span>
+                    Delete User
+                </a>
+            </p>
+            <a class='btn btn-primary' href="{% url 'user-list' %}">
+                <span class='glyphicon glyphicon-menu-left'>
+                </span>
+                Back to list of users
+            </a>
+        </div>
+    </div>
 
 {% endblock %}

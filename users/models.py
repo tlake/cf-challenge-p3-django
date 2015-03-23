@@ -4,6 +4,7 @@ class User(models.Model):
     firstname = models.CharField("First Name", max_length=30)
     lastname = models.CharField("Last Name", max_length=30, null=True, blank=True)
     email = models.EmailField("Email", max_length=60, null=True, blank=True)
+    avatar_url = models.URLField("Avatar URL", null=True, blank=True)
 
     def __unicode__(self):
         return self.firstname
@@ -20,4 +21,5 @@ class AboutText(models.Model):
 
     def __unicode__(self):
         return str(self.display_order) + ": " + self.title
+
 

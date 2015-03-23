@@ -10,6 +10,8 @@
     <form method="POST">{% csrf_token %}
         {{ form|crispy }}
 
+        <p>Note: Image will be fit to 256x256 pixels.</p>
+
         <p></p>
 
         <button class='btn btn-primary' type="submit">
